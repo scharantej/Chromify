@@ -1,0 +1,24 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flask Color Change App</title>
+</head>
+<body>
+<h1>Flask Color Change App</h1>
+<p>Click the button to change the background color.</p>
+<button type="button" onclick="changeColor()">Change Color</button>
+
+<script>
+function changeColor() {
+fetch('/change_color')
+.then(res => res.json())
+.then(data => {
+document.body.style.backgroundColor = data.color;
+});
+}
+</script>
+</body>
+</html>
+
